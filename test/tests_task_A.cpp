@@ -1,18 +1,4 @@
-#include <iostream>
-
-int calc_verdict(int r, int i, int c);
-
-int main(int argc, const char **argv)
-{
-  int r = 0;
-  int i = 0;
-  int c = 0;
-
-  std::cin >> r >> i >> c;
-  std::cout << calc_verdict(r, i, c);
-
-  return 0;
-}
+#include <catch2/catch.hpp>
 
 int calc_verdict(int r, int i, int c)
 {
@@ -49,4 +35,14 @@ int calc_verdict(int r, int i, int c)
   }
 
   return i;
+}
+
+TEST_CASE("A. Interactor", " ")
+{
+  REQUIRE(calc_verdict(0, 0, 0) == 0);
+  REQUIRE(calc_verdict(-1, 0, 1) == 3);
+  REQUIRE(calc_verdict(42, 1, 6) == 6);
+  REQUIRE(calc_verdict(44, 7, 4) == 1);
+  REQUIRE(calc_verdict(1, 4, 0) == 3);
+  REQUIRE(calc_verdict(-3, 2, 4) == 2);
 }
