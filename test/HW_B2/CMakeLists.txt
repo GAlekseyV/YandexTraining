@@ -16,12 +16,27 @@ catch_discover_tests(
   OUTPUT_SUFFIX
   .xml)
 
-
 add_executable(tests_B2task_B tests_task_B.cpp)
 target_link_libraries(tests_B2task_B PRIVATE project_warnings project_options catch_main)
 
 catch_discover_tests(
   tests_B2task_B
+  TEST_PREFIX
+  "unittests."
+  REPORTER
+  xml
+  OUTPUT_DIR
+  .
+  OUTPUT_PREFIX
+  "unittests."
+  OUTPUT_SUFFIX
+  .xml)
+
+add_executable(tests_B2task_C tests_task_C.cpp)
+target_link_libraries(tests_B2task_C PRIVATE project_warnings project_options catch_main)
+
+catch_discover_tests(
+  tests_B2task_C
   TEST_PREFIX
   "unittests."
   REPORTER
