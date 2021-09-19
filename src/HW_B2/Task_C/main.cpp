@@ -20,13 +20,10 @@ int calc_cost(const std::string &s)
   std::string rs(s);
   std::reverse(rs.begin(), rs.end());
 
-  std::string_view rs_view(rs);
-  std::string_view s_view(s);
-
   int counter = 0;
 
   for (size_t i = 0; i < (s.size() + 1) / 2; i++) {
-    if (s_view[i] != rs_view[i]) {
+    if (s[i] != rs[i]) {
       counter++;
     }
   }
