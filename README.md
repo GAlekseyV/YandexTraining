@@ -9,3 +9,11 @@
 - [C. Даты](src/HW_B1/Task_C/task_C.md)
 - [D. Строительство школы](src/HW_B1/Task_D/task_D.md)
 - [E. Точка и треугольник](src/HW_B1/Task_E/task_E.md)
+
+## Домашенее задание 2. Дивизион В
+
+- [А. Количество равных максимальному](/src/HW_B2/Task_A/task_A.md)
+- [B. Дома и магазины](/src/HW_B2/Task_B/task_B.md)
+- [C. Изготовление палиндромов](/src/HW_B2/Task_C/task_C.md)
+- [D. Лавочки в атриуме](/src/HW_B2/Task_D/task_D.md)
+- [E. Дипломы в папках](/src/HW_B2/Task_E/task_E.md)
