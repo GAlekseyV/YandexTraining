@@ -9,3 +9,4 @@ target_link_libraries(catch_main PRIVATE project_options)
 
 add_subdirectory(HW_B1)
 add_subdirectory(HW_B2)
+add_subdirectory(HW_B3)
