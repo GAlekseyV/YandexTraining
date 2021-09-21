@@ -4,8 +4,6 @@
 #include <string>
 #include <vector>
 
-int calc_cost(const std::string &s);
-
 int main()
 {
   std::string line;
