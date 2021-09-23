@@ -15,3 +15,5 @@ add_subdirectory(HW_B3/Task_B)
 add_subdirectory(HW_B3/Task_C)
 add_subdirectory(HW_B3/Task_D)
 add_subdirectory(HW_B3/Task_E)
+
+add_subdirectory(HW_B4/Task_A)
