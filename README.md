@@ -25,3 +25,11 @@
 - [C. Уникальные элементы](/src/HW_B3/Task_C/task_C.md)
 - [D. Угадай число](/src/HW_B3/Task_D/task_D.md)
 - [E. Автомобильные номера](/src/HW_B3/Task_E/task_E.md)
+
+## Домашнее задание 4. Дивизион B
+
+- [A. Толя-Карп и новый набор структур, часть 2](src/HW_B4/Task_A/task_A.md)
+- [B. Выборы в США](src/HW_B4/Task_B/task_B.md)
+- [С. Частотный анализ](src/HW_B4/Task_C/task_C.md)
+- [D. Выборы Государственной Думы](src/HW_B4/Task_D/task_D.md)
+- [E. Форум](src/HW_B4/Task_E/task_E.md)
