@@ -7,7 +7,7 @@
 
 std::pair<std::string, int> parse_line(const std::string &line);
 void skipSpaces(std::stringstream &is);
-const long TOTAL_PLACES = 450;
+const int TOTAL_PLACES = 450;
 
 std::string elections_result(const std::string &in_str)
 {
@@ -16,14 +16,14 @@ std::string elections_result(const std::string &in_str)
   std::string line(" ");
   std::getline(ss, line);
 
-  std::pair<std::string, long> name_to_votes;
-  std::vector<std::pair<std::string, long>> parties_to_votes;
+  std::pair<std::string, double> name_to_votes;
+  std::vector<std::pair<std::string, double>> parties_to_votes;
   std::vector<std::pair<std::string, long>> party_to_places;
   std::vector<std::pair<double, std::string>> rem_to_party;
   std::map<std::string, long> p_to_v;
 
 
-  long total_votes = 0;
+  double total_votes = 0;
 
   while (!line.empty()) {
     name_to_votes = parse_line(line);
@@ -35,10 +35,10 @@ std::string elections_result(const std::string &in_str)
 
   int temp_num_places = 0;
   for (const auto &[party, votes] : parties_to_votes) {
-    temp_num_places += static_cast<int>((votes / static_cast<double>(total_votes)) * TOTAL_PLACES);
-    party_to_places.emplace_back(party, (votes / static_cast<double>(total_votes)) * TOTAL_PLACES);
-    double fractional_part = votes / static_cast<double>(total_votes) * TOTAL_PLACES
-                             - floor(votes / static_cast<double>(total_votes) * TOTAL_PLACES);
+    temp_num_places += static_cast<int>((votes/ total_votes) * TOTAL_PLACES);
+    party_to_places.emplace_back(party, (votes / total_votes) * TOTAL_PLACES);
+    double fractional_part = (votes / total_votes) * TOTAL_PLACES
+                             - floor((votes / total_votes) * TOTAL_PLACES);
     rem_to_party.emplace_back(fractional_part, party);
   }
 
