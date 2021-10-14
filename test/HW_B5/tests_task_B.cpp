@@ -2,13 +2,13 @@
 #include <catch2/catch.hpp>
 #include <vector>
 
-long long max_sum(const std::vector<long long> &seq)
+long long max_sum(const std::vector<long long> v)
 {
-  std::vector<long long> lprefix(seq.size() + 1);
+  assert(&v);
+  std::vector<long long> lprefix(v.size() + 1, 0L);
 
-  lprefix[0] = 0;
   size_t i = 1;
-  for (const auto a : seq) {
+  for (const auto &a : v) {
     lprefix[i] = lprefix[i - 1] + a;
     i++;
   }
