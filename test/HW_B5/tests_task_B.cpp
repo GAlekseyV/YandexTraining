@@ -4,7 +4,8 @@
 
 long long max_sum(const std::vector<long long> &seq)
 {
-  std::vector<long long> lprefix(seq.size() + 1);
+  assert(&seq);
+  std::vector<long long> lprefix(seq.size() + 1, 0l);
 
   lprefix[0] = 0;
   size_t i = 1;
