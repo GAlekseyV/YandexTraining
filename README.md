@@ -33,3 +33,11 @@
 - [С. Частотный анализ](src/HW_B4/Task_C/task_C.md)
 - [D. Выборы Государственной Думы](src/HW_B4/Task_D/task_D.md)
 - [E. Форум](src/HW_B4/Task_E/task_E.md)
+
+## Домашнее задание 5. Дивизион B
+
+- [A. Префиксные суммы](src/HW_B5/Task_A/task_A.md)
+- [B. Максимальная сумма](src/HW_B5/Task_B/task_B.md)
+- [C. Каждому по компьютеру](src/HW_B5/Task_C/task_C.md)
+- [D. Правильная, круглая, скобочная](src/HW_B5/Task_D/task_D.md)
+- [E. Сумма трёх](src/HW_B5/Task_E/task_E.md)
