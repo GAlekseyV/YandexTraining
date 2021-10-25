@@ -7,13 +7,14 @@ std::vector<int> read_nums(std::istream &is);
 /*
  * Возвращает индекс первого элемента вектора v равного n
  */
-// TODO Реализовать функцию с приемом функтора, как в лекции
-size_t findfirstgen(const std::vector<int> &v, int n);
+template<class UnaryPredicate>
+size_t findfirstgen(const std::vector<int> &v, int n, UnaryPredicate pred);
 
 /*
  * Возвращает индекс последнего элемента вектора v равного n
  */
-size_t findlastlen(const std::vector<int> &v, int n);
+template<class UnaryPredicate>
+size_t findlastlen(const std::vector<int> &v, int n, UnaryPredicate pred);
 
 int main()
 {
@@ -29,8 +30,8 @@ int main()
     std::cin >> L >> R;
     // Найти индекс первого элемента меньше или равного L
     // Найти индекс последнего элемента больше или равного R
-    auto Lidx = findfirstgen(nums, L);
-    auto Ridx = findlastlen(nums, R);
+    auto Lidx = findfirstgen(nums, L, std::less<size_t>());
+    auto Ridx = findlastlen(nums, R, std::less<size_t>());
 
     size_t ans = 0;
     if (Ridx > Lidx) {
@@ -62,12 +63,13 @@ std::vector<int> read_nums(std::istream &is)
   return nums;
 }
 
-size_t findfirstgen(const std::vector<int> &v, int n)
+template<class UnaryPredicate>
+size_t findfirstgen(const std::vector<int> &v, int n, UnaryPredicate pred)
 {
   size_t l = 0;
   size_t r = v.size() - 1;
   size_t m = 0;
-  while (l < r) {
+  while (pred(l, r)) {
     m = (l + r) / 2;
     if (v[m] >= n) {
       r = m;
@@ -78,12 +80,13 @@ size_t findfirstgen(const std::vector<int> &v, int n)
   return l;
 }
 
-size_t findlastlen(const std::vector<int> &v, int n)
+template<class UnaryPredicate>
+size_t findlastlen(const std::vector<int> &v, int n, UnaryPredicate pred)
 {
   size_t l = 0;
   size_t r = v.size() - 1;
   size_t m = 0;
-  while (l < r) {
+  while (pred(l, r)) {
     m = (l + r + 1) / 2;
     if (v[m] <= n) {
       l = m;
