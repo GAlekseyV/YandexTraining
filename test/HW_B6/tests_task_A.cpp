@@ -4,12 +4,13 @@
 
 // Поиск первого элемента в последовательности, который больше
 // или равен n
-size_t findfirstgen(const std::vector<int> &v, int n)
+template<class UnaryPredicate>
+size_t findfirstgen(const std::vector<int> &v, int n, UnaryPredicate pred)
 {
   size_t l = 0;
   size_t r = v.size() - 1;
   size_t m = 0;
-  while (l < r) {
+  while (pred(l, r)) {
     m = (l + r) / 2;
     if (v[m] >= n) {
       r = m;
@@ -22,12 +23,13 @@ size_t findfirstgen(const std::vector<int> &v, int n)
 
 // Поиск последнего элемента в последовательности меньшего или
 // равного n
-size_t findlastlen(const std::vector<int> &v, int n)
+template<class UnaryPredicate>
+size_t findlastlen(const std::vector<int> &v, int n, UnaryPredicate pred)
 {
   size_t l = 0;
   size_t r = v.size() - 1;
   size_t m = 0;
-  while (l < r) {
+  while (pred(l, r)) {
     m = (l + r + 1) / 2;
     if (v[m] <= n) {
       l = m;
@@ -42,8 +44,8 @@ size_t findlastlen(const std::vector<int> &v, int n)
 int calcnums(const std::vector<int> &v, int l, int r)
 {
   size_t ans = 0;
-  auto Lidx = findfirstgen(v, l);
-  auto Ridx = findlastlen(v, r);
+  auto Lidx = findfirstgen(v, l, std::less<size_t>());
+  auto Ridx = findlastlen(v, r, std::less<size_t>());
 
   if (Ridx > Lidx) {
     ans = Ridx - Lidx + 1;
@@ -58,45 +60,45 @@ int calcnums(const std::vector<int> &v, int l, int r)
 TEST_CASE("A. Binary search. Find first greater or equal n", "[findfirstgen]")
 {
   std::vector<int> v{ -1'000'000'001, 1, 2, 3, 4, 1'000'000'001 };
-  REQUIRE(findfirstgen(v, 2) == 2);
-  REQUIRE(findfirstgen(v, 1) == 1);
-  REQUIRE(findfirstgen(v, 4) == 4);
+  REQUIRE(findfirstgen(v, 2, std::less<size_t>()) == 2);
+  REQUIRE(findfirstgen(v, 1, std::less<size_t>()) == 1);
+  REQUIRE(findfirstgen(v, 4, std::less<size_t>()) == 4);
 
-  REQUIRE(findfirstgen(v, 0) == 1);
-  REQUIRE(findfirstgen(v, 5) == 5);
+  REQUIRE(findfirstgen(v, 0, std::less<size_t>()) == 1);
+  REQUIRE(findfirstgen(v, 5, std::less<size_t>()) == 5);
 
   v = { -1'000'000'001, 1, 3, 5, 100, 1'000'000'001 };
-  REQUIRE(findfirstgen(v, 4) == 3);
+  REQUIRE(findfirstgen(v, 4, std::less<size_t>()) == 3);
 
   v = { -1'000'000'001, 1, 3, 3, 3, 1'000'000'001 };
-  REQUIRE(findfirstgen(v, 3) == 2);
+  REQUIRE(findfirstgen(v, 3, std::less<size_t>()) == 2);
 
   v = { -1'000'000'001, 1, 1'000'000'001 };
-  REQUIRE(findfirstgen(v, 1) == 1);
-  REQUIRE(findfirstgen(v, -1'000'000'000) == 1);
-  REQUIRE(findfirstgen(v, 1'000'000'000) == 2);
+  REQUIRE(findfirstgen(v, 1, std::less<size_t>()) == 1);
+  REQUIRE(findfirstgen(v, -1'000'000'000, std::less<size_t>()) == 1);
+  REQUIRE(findfirstgen(v, 1'000'000'000, std::less<size_t>()) == 2);
 }
 
 TEST_CASE("A. Binary search. Find last less or equal n", "[findlastgen]")
 {
   std::vector<int> v = { -1'000'000'001, 1, 2, 3, 4, 1'000'000'001 };
-  REQUIRE(findlastlen(v, 2) == 2);
-  REQUIRE(findlastlen(v, 1) == 1);
-  REQUIRE(findlastlen(v, 4) == 4);
+  REQUIRE(findlastlen(v, 2, std::less<size_t>()) == 2);
+  REQUIRE(findlastlen(v, 1, std::less<size_t>()) == 1);
+  REQUIRE(findlastlen(v, 4, std::less<size_t>()) == 4);
 
-  REQUIRE(findlastlen(v, 0) == 0);
-  REQUIRE(findlastlen(v, 5) == 4);
+  REQUIRE(findlastlen(v, 0, std::less<size_t>()) == 0);
+  REQUIRE(findlastlen(v, 5, std::less<size_t>()) == 4);
 
   v = { -1'000'000'001, 1, 3, 5, 100, 1'000'000'001 };
-  REQUIRE(findlastlen(v, 4) == 2);
+  REQUIRE(findlastlen(v, 4, std::less<size_t>()) == 2);
 
   v = { -1'000'000'001, 1, 2, 2, 2, 1'000'000'001 };
-  REQUIRE(findlastlen(v, 2) == 4);
+  REQUIRE(findlastlen(v, 2, std::less<size_t>()) == 4);
 
   v = { -1'000'000'001, 1, 1'000'000'001 };
-  REQUIRE(findlastlen(v, 1) == 1);
-  REQUIRE(findlastlen(v, -1'000'000'000) == 0);
-  REQUIRE(findlastlen(v, 1'000'000'000) == 1);
+  REQUIRE(findlastlen(v, 1, std::less<size_t>()) == 1);
+  REQUIRE(findlastlen(v, -1'000'000'000, std::less<size_t>()) == 0);
+  REQUIRE(findlastlen(v, 1'000'000'000, std::less<size_t>()) == 1);
 }
 
 TEST_CASE("A. Binary search. Calculate numbers from L to R", "[calcnums]")
