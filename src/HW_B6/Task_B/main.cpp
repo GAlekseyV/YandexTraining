@@ -4,9 +4,9 @@
 
 std::vector<int> read_nums(std::istream &is);
 
-size_t find_left_entry(int n, const std::vector<int> v);
+size_t find_left_entry(int n, const std::vector<int> &v);
 
-size_t find_right_entry(int n, const std::vector<int> v);
+size_t find_right_entry(int n, const std::vector<int> &v);
 
 /*
  * Возвращает индекс первого элемента вектора v равного n
@@ -50,7 +50,7 @@ std::vector<int> read_nums(std::istream &is)
   return nums;
 }
 
-size_t find_left_entry(int n, const std::vector<int> v)
+size_t find_left_entry(int n, const std::vector<int> &v)
 {
   size_t ans = 0;
   ans = findfirstgen(v, n, std::less<size_t>());
@@ -60,7 +60,7 @@ size_t find_left_entry(int n, const std::vector<int> v)
   return ans;
 }
 
-size_t find_right_entry(int n, const std::vector<int> v)
+size_t find_right_entry(int n, const std::vector<int> &v)
 {
   size_t ans = 0;
   ans = findlastlen(v, n, std::less<size_t>());
