@@ -1,0 +1,2 @@
+add_executable(B6task_C main.cpp)
+target_link_libraries(B6task_C PRIVATE project_warnings project_options)
