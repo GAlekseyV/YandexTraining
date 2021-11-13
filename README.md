@@ -41,3 +41,11 @@
 - [C. Каждому по компьютеру](src/HW_B5/Task_C/task_C.md)
 - [D. Правильная, круглая, скобочная](src/HW_B5/Task_D/task_D.md)
 - [E. Сумма трёх](src/HW_B5/Task_E/task_E.md)
+
+## Домашнее задание 6. Дивизион В
+
+- [A. Быстрый поиск в массива](src/HW_B6/Task_A/task_A.md)
+- [B. Номер левого и правого вхождения](src/HW_B6/Task_B/task_B.md)
+- [C. Корень кубического уравнения](src/HW_B6/Task_C/task_C.md)
+- [D. Вырубка леса](src/HW_B6/Task_D/task_D.md)
+- [E. Покрытие К отрезками](src/HW_B6/Task_E/task_E.md)
