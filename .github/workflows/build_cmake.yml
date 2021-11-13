@@ -27,7 +27,8 @@ jobs:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: ['ubuntu-latest']
+        os: [windows-latest]
+        compiler: [g++-11.2.0]
 
     steps:
     - uses: actions/checkout@v2
