@@ -54,8 +54,8 @@ std::vector<int> read_nums(std::istream &is)
   is >> size;
   size += 2;
   std::vector<int> nums(size, 0);
-  nums[0] = -1'000'000'001;
-  nums[size - 1] = 1'000'000'001;
+  nums.at(0) = -1'000'000'001;
+  nums.at(size - 1) = 1'000'000'001;
   for (size_t i = 1; i < size - 1; i++) {
     is >> num;
     nums[i] = num;
