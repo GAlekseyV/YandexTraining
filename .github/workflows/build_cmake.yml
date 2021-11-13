@@ -28,6 +28,7 @@ jobs:
     strategy:
       matrix:
         os: ['ubuntu-latest']
+        compiler: [g++-11.2.0]
 
     steps:
     - uses: actions/checkout@v2
