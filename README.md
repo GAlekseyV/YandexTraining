@@ -49,3 +49,11 @@
 - [C. Корень кубического уравнения](src/HW_B6/Task_C/task_C.md)
 - [D. Вырубка леса](src/HW_B6/Task_D/task_D.md)
 - [E. Покрытие К отрезками](src/HW_B6/Task_E/task_E.md)
+
+## Домашнее задание 7. Дивизион В
+
+- [A. Закраска прямой](src/HW_B7/Task_A/task_A.md)
+- [B. Таможня](src/HW_B7/Task_B/task_B.md)
+- [C. Минимальное покрытие](src/HW_B7/Task_C/task_C.md)
+- [D. Наполненность котятами](src/HW_B7/Task_D/task_D.md)
+- [E. Полярные прямоугольники](src/HW_B7/Task_E/task_E.md)
