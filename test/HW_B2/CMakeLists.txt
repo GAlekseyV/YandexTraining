@@ -6,13 +6,13 @@ target_link_libraries(tests_B2task_A PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B2task_A
   TEST_PREFIX
-  "unittests."
+  "HW_2. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_2. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -22,13 +22,13 @@ target_link_libraries(tests_B2task_B PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B2task_B
   TEST_PREFIX
-  "unittests."
+  "HW_2. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_2. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -38,13 +38,13 @@ target_link_libraries(tests_B2task_C PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B2task_C
   TEST_PREFIX
-  "unittests."
+  "HW_2. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_2. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -54,13 +54,13 @@ target_link_libraries(tests_B2task_D PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B2task_D
   TEST_PREFIX
-  "unittests."
+  "HW_2. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_2. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -70,12 +70,12 @@ target_link_libraries(tests_B2task_E PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B2task_E
   TEST_PREFIX
-  "unittests."
+  "HW_2. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_2. "
   OUTPUT_SUFFIX
   .xml)

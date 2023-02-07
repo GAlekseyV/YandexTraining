@@ -6,12 +6,12 @@ target_link_libraries(tests_B5task_B PRIVATE project_warnings project_options ca
 catch_discover_tests(
   tests_B5task_B
   TEST_PREFIX
-  "unittests."
+  "HW_5. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_5. "
   OUTPUT_SUFFIX
   .xml)

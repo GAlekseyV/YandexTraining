@@ -4,7 +4,7 @@
 
 std::vector<int> calc_ans(const std::vector<int> &seq, int l);
 
-TEST_CASE("D. Лавочки в атриуме", " ")
+TEST_CASE("D. Benches in the atrium", " ")
 {
   REQUIRE(calc_ans({ 0, 2 }, 5) == std::vector<int>{ 2 });
   REQUIRE(calc_ans({ 1, 4, 8, 11 }, 13) == std::vector<int>{ 4, 8 });

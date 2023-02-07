@@ -6,13 +6,13 @@ target_link_libraries(tests_task_A PRIVATE project_warnings project_options catc
 catch_discover_tests(
   tests_task_A
   TEST_PREFIX
-  "unittests."
+  "HW_1. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "unittests."
+  "HW_1. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -24,13 +24,13 @@ target_link_libraries(tests_task_B PRIVATE project_warnings project_options catc
 catch_discover_tests(
   tests_task_B
   TEST_PREFIX
-  "tests_."
+  "HW_1. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "tests_."
+  "HW_1. "
   OUTPUT_SUFFIX
   .xml)
 
@@ -42,13 +42,13 @@ catch_discover_tests(
   catch_discover_tests(
     tests_task_C
     TEST_PREFIX
-    "tests_."
+    "HW_1. "
     REPORTER
     xml
     OUTPUT_DIR
     .
     OUTPUT_PREFIX
-    "tests_."
+    "HW_1. "
     OUTPUT_SUFFIX
     .xml)
 
@@ -60,12 +60,12 @@ target_link_libraries(tests_task_E PRIVATE project_warnings project_options catc
 catch_discover_tests(
   tests_task_E
   TEST_PREFIX
-  "tests_."
+  "HW_1. "
   REPORTER
   xml
   OUTPUT_DIR
   .
   OUTPUT_PREFIX
-  "tests_."
+  "HW_1. "
   OUTPUT_SUFFIX
   .xml)
